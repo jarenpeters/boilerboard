@@ -5,7 +5,7 @@ import re
 import os
 from dotenv import load_dotenv
 
-load_dotenv()  # finds your .env automatically
+load_dotenv()
 
 MONGO_URI = os.getenv("MONGO_URI")
 
@@ -30,15 +30,13 @@ def search_events():
     if not query:
         return jsonify([])
 
-    # If query starts with "@", search only by Username
     if query.startswith("@"):
-        username = query[1:]  # remove @
+        username = query[1:]
         events = list(collection.find(
             {"Username": re.compile(f"^{re.escape(username)}$", re.IGNORECASE)},
             {"_id": 0}
         ))
     else:
-        # Search by EventTitle, EventSummary, Location, or Tags (case-insensitive, partial match)
         regex = re.compile(re.escape(query), re.IGNORECASE)
         events = list(collection.find(
             {
@@ -54,5 +52,8 @@ def search_events():
 
     return jsonify(events)
 
+# Only run the web server if this script is executed directly
 if __name__ == "__main__":
-    app.run(debug=True)
+    from waitress import serve
+    port = int(os.environ.get("PORT", 5000))
+    serve(app, host="0.0.0.0", port=port)
