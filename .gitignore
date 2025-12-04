@@ -1,0 +1,8 @@
+node_modules/
+.venv/
+*.pyc
+__pycache__/
+.env
+session-*      # instaloader session files
+posts_data.csv
+all_accounts_posts.csv
