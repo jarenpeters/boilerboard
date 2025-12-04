@@ -1,8 +1,9 @@
 node_modules/
+.DS_Store
 .venv/
 *.pyc
 __pycache__/
 .env
-session-*      # instaloader session files
+session-*
 posts_data.csv
 all_accounts_posts.csv
