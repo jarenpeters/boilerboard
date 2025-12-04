@@ -1,0 +1,11 @@
+Flask==2.3.4
+Flask-Cors==3.0.10
+pymongo==4.5.0
+python-dotenv==1.0.0
+pandas==2.1.1
+Pillow==10.0.0
+pytesseract==0.3.10
+requests==2.31.0
+openai==1.0.0
+instaloader==4.11.3
+waitress==2.1.2
