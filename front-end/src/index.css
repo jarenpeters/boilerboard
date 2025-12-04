@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  /* Custom Colors */
+  --color-boilerbeige: #EEEAE3;
+  --color-boilerorange: #F7C56E;
+  --color-boilergold: #FFA200;
+  --color-boilergray: #252525;
+  --color-boilerdark: #1A1A1A;
+
+  /* Custom Animations */
+  /* Define keyframes first */
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Register animations with the --animate- prefix */
+  --animate-fade-in: fade-in 0.3s ease-in;
+  --animate-slide-up: slide-up 0.4s ease-out;
+  --animate-spin-slow: spin-slow 3s linear infinite;
+}
+
+.font-dmsans {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.font-stick-no-bills {
+    font-family: "Stick No Bills", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+ }
+
+html, body {
+    @apply bg-boilergray;
+    margin: 0;
+}
+
+@keyframes pulseSlow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 0.2; }
+}
+
+.pulse-slow-8 {
+    animation: pulseSlow 8s infinite;
+}
+.pulse-slow-10 {
+    animation: pulseSlow 10s infinite;
+}
+.pulse-slow-12 {
+    animation: pulseSlow 12s infinite;
+}
+
+/* fade-in and hold for the duration, then fade-out */
+@keyframes fadeInHoldFadeOut {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) rotate(-5deg);
+    }
+    10% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+    85% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9) rotate(5deg);
+    }
+}
+
+/* Apply this class dynamically with duration */
+.animate-check {
+    animation-fill-mode: forwards;
+}
+
+@keyframes cursorBlink {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+}
+
+.cursor {
+    animation: cursorBlink 0.9s steps(2) infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.animate-blink {
+    animation: blink 0.8s step-start infinite;
+}
+
+.fc .fc-toolbar .fc-button {
+    @apply rounded-full bg-boilerdark text-white font-bold border-none px-4 py-2;
+}
+
+.fc .fc-toolbar .fc-button:hover {
+    @apply bg-boilerbeige/20 text-boilerbeige;
+}
+
+.fc .fc-toolbar .fc-button.fc-button-active {
+    @apply bg-boilerbeige text-boilerdark;
+}
+.fc .fc-toolbar-title {
+    @apply lowercase text-2xl sm:text-3xl;
+}
