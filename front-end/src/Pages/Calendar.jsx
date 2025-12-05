@@ -8,7 +8,7 @@ export default function Calendar() {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        fetch("http://127.0.0.1:5000/events")
+        fetch("https://boilerboard.onrender.com/events")
             .then((res) => res.json())
             .then((data) => {
                 const formatted = data

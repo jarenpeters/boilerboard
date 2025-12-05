@@ -6,7 +6,7 @@ function EventsList() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        fetch("http://127.0.0.1:5000/events")
+        fetch("https://boilerboard.onrender.com/events")
             .then((res) => res.json())
             .then((data) => setPosts(data))
             .catch((err) => console.error(err));
