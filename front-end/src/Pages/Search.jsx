@@ -14,7 +14,7 @@ export default function Search() {
         if (!queryParam) return;
         window.scrollTo(0, 0);
 
-        fetch(`https://boilerboard.onrender.com/events/search?query=${encodeURIComponent(queryParam)}`)
+        fetch(`https://boilerboard.onrender.com/search?query=${encodeURIComponent(queryParam)}`)
             .then((res) => res.json())
             .then((data) => setResults(data))
             .catch((err) => console.error(err));
