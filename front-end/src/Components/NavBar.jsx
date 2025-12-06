@@ -41,10 +41,10 @@ function NavBar() {
                 <Link to="/" onClick={() => setIsOpen(false)}>
                     <div className="flex items-center sm:gap-0">
                         <img
-                            className="rounded-2xl h-16 object-contain"
+                            className="rounded-2xl h-12 sm:h-16 object-contain"
                             src="/secondlogo.png"
                         />
-                        <div className="text-5xl font-stick-no-bills pt-[7px]">
+                        <div className="text-3xl sm:text-5xl font-stick-no-bills pt-[7px]">
                             boilerboard
                         </div>
                     </div>
@@ -98,7 +98,7 @@ function NavBar() {
             {isOpen && (
                 <nav
                     className="
-                        absolute top-full right-30 mt-0
+                        absolute top-full right-18 sm:right-30 mt-0
                         w-64 shadow-lg border border-t-0 border-white/10
                         backdrop-blur-lg bg-boilerdark/40 p-4 flex flex-col gap-4
                         rounded-b-2xl z-40 xl:hidden font-dmsans font-black

@@ -111,7 +111,7 @@ function Landing() {
                 <div className="mx-auto xl:mx-0">
                     <div className="
                     font-dmsans font-extrabold text-left
-                    text-[5rem] sm:text-[5rem] md:text-[5rem] lg:text-[7rem] xl:text-[8rem]
+                    text-[3.75rem] sm:text-[5rem] md:text-[5rem] lg:text-[7rem] xl:text-[8rem]
                     leading-[0.8] w-full">
                         <h1 className="whitespace-nowrap mx-auto">
                             never miss<br />
