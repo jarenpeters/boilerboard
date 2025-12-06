@@ -34,7 +34,7 @@ function NavBar() {
                     font-dmsans font-black
                     rounded-full transition-all duration-300
                     px-10 mx-7
-                    h-26 sm:mx-10 my-10
+                    h-22 sm:h-26 sm:mx-10 my-8 sm:my-10
                 "
             >
                 {/* LEFT — LOGO */}
