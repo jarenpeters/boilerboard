@@ -56,7 +56,7 @@ export default function HorizontalCarousel({ items, renderItem }) {
                     {slides.map((item, i) => (
                         <div
                             key={i}
-                            className="flex-none w-72 mr-12 first:ml-12 first:sm:ml-19 last:mr-22"
+                            className="flex-none w-72 mr-10 first:ml-12 first:sm:ml-19 last:mr-22"
                         >
                             {renderItem(item)}
                         </div>

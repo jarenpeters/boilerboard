@@ -63,7 +63,7 @@ export default function Calendar() {
                     }}
                     buttonClassNames="rounded-full bg-boilerdark text-white font-bold px-4 py-2 hover:bg-white/20 hover:text-boilerbeige"
                     eventColor="orange"// lets the calendar grow based on content
-                    contentHeight={600}
+                    contentHeight={400}
                     events={events}
                     eventClick={(info) => {
                         window.open(info.event.extendedProps.instagram, "_blank");
