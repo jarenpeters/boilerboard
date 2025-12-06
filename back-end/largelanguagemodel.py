@@ -34,8 +34,8 @@ For each event post, return the following fields:
 - Username
 - PostIndex
 - EventTitle (use lower case, 32 characters or less)
-- Date (“month day” or NOT_FOUND, use lowercase and abbreviate month (jan. feb. mar. apr. may.)
 - DateISO (ISO format: YYYY-MM-DD, or NOT_FOUND) (infer an event's year based on the post date provided)
+- Date (“month day, year” or NOT_FOUND, use lowercase and abbreviate month (jan. feb. mar. apr. may.)
 - Time (“0:00AM/PM” or NOT_FOUND, only use start time)
 - Location (e.g., “WALC 1009” or "lawson commons", or NOT_FOUND)
 - EventSummary (1 sentence, 100 characters or less)

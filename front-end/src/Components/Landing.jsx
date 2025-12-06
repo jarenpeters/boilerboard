@@ -102,29 +102,42 @@ function Landing() {
     }, []);
 
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center mt-2 mx-10 gap-16">
-            <div className="flex flex-col items-start gap-6 w-full md:w-1/2">
+        <div className="flex flex-col lg:flex-row items-center justify-center mt-2 mx-10 gap-10 lg:gap-16 -mb-8">
 
-                {/* TYPING EFFECT TEXT */}
-                <div className="font-dmsans font-extrabold text-left text-[4rem] sm:text-[5rem] md:text-[7rem] lg:text-[8rem] leading-[0.8]">
-                    <h1>
-                        never miss<br/>a{" "}
-                        <em className="font-light">
-                            {displayWord}
-                            <span className="cursor ml-1"></span>
-                        </em><span className="animate-blink font-light">|</span><br/>
-                        event again
-                    </h1>
+            {/* LEFT SIDE — full width on mobile */}
+            <div className="flex flex-col items-start gap-6 w-full sm:w-140 lg:w-180 xl:w-1/2">
+
+                {/* TYPING TEXT */}
+                <div className="mx-auto xl:mx-0">
+                    <div className="
+                    font-dmsans font-extrabold text-left
+                    text-[5rem] sm:text-[5rem] md:text-[5rem] lg:text-[7rem] xl:text-[8rem]
+                    leading-[0.8] w-full">
+                        <h1 className="whitespace-nowrap mx-auto">
+                            never miss<br />
+                            a{" "}
+                            <em className="font-light">
+                                {displayWord}
+                                <span className="cursor ml-1"></span>
+                            </em>
+                            <span className="animate-blink font-light">|</span>
+                            <br />
+                            event again
+                        </h1>
+                    </div>
+                    <p className="text-l lg:text-2xl xl:text-2xl text-boilerbeige/70 mt-4 lg:mt-6 w-full">
+                        find all boilermaker events, right where you need them.
+                    </p>
                 </div>
 
-                <p className="text-lg sm:text-xl md:text-2xl text-boilerbeige/70">
-                    find all boilermaker events, right where you need them.
-                </p>
-
-                <SearchBar className="w-172" />
+                {/* SEARCH — full-width on mobile */}
+                <div className="w-full">
+                    <SearchBar className="w-full" />
+                </div>
             </div>
 
-            <div className="relative w-[400px] h-[400px] md:w-[480px] md:h-[480px]">
+            {/* RIGHT SIDE — post-its & check marks (hidden earlier) */}
+            <div className="hidden xl:block relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[480px] lg:h-[480px]">
                 <img
                     src="/heroposts.png"
                     alt="4 post-it notes"

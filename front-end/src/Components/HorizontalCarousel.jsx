@@ -1,8 +1,8 @@
-import useEmblaCarousel from "embla-carousel-react";
-import React, { useCallback, useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react"
+import React, { useCallback, useEffect, useState } from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
-export default function HorizontalCarousel({ children }) {
+export default function HorizontalCarousel({ items, renderItem }) {
     const [emblaRef, embla] = useEmblaCarousel({
         loop: false,
         dragFree: true,
@@ -10,7 +10,7 @@ export default function HorizontalCarousel({ children }) {
         containScroll: "trimSnaps",
     });
 
-    const slides = React.Children.toArray(children);
+    const slides = items || [];
 
     const [prevEnabled, setPrevEnabled] = useState(false);
     const [nextEnabled, setNextEnabled] = useState(false);
@@ -33,46 +33,32 @@ export default function HorizontalCarousel({ children }) {
 
     return (
         <div className="relative w-full">
-
-            {/* LEFT ARROW */}
             {prevEnabled && (
                 <button
                     onClick={scrollPrev}
-                    className="
-                        absolute left-0 top-1/2 -translate-y-1/2 z-10
-                        bg-black/30 hover:bg-black/50
-                        backdrop-blur-lg text-white
-                        rounded-full p-2 transition ml-8 border border-white/10 hover:translate-x-1
-                    "
+                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/30 hover:bg-black/50 backdrop-blur-lg text-white rounded-full p-2 transition ml-8 border border-white/10 hover:translate-x-1"
                 >
                     <ChevronLeft size={42} />
                 </button>
             )}
 
-            {/* RIGHT ARROW */}
             {nextEnabled && (
                 <button
                     onClick={scrollNext}
-                    className="
-                        absolute right-0 top-1/2 -translate-y-1/2 z-10
-                        bg-black/30 hover:bg-black/50
-                        backdrop-blur-lg text-white
-                        rounded-full p-2 transition mr-8 border border-white/10 hover:-translate-x-1
-                    "
+                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/30 hover:bg-black/50 backdrop-blur-lg text-white rounded-full p-2 transition mr-8 border border-white/10 hover:-translate-x-1"
                 >
                     <ChevronRight size={42} />
                 </button>
             )}
 
-            {/* EMBLA VIEWPORT */}
-            <div className="w-full overflow-hidden max-w-none" ref={emblaRef}>
+            <div className="w-full overflow-hidden" ref={emblaRef}>
                 <div className="flex">
-                    {slides.map((child, index) => (
+                    {slides.map((item, i) => (
                         <div
-                            key={index}
-                            className="flex-none w-72 mr-12 first:ml-19 last:mr-19"
+                            key={i}
+                            className="flex-none w-72 mr-12 first:ml-8 first:sm:ml-19 last:mr-22"
                         >
-                            {child}
+                            {renderItem(item)}
                         </div>
                     ))}
                 </div>

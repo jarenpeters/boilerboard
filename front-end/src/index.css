@@ -106,8 +106,45 @@ html, body {
     51%, 100% { opacity: 0; }
 }
 
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.shimmer {
+    background: linear-gradient(
+            90deg,
+            rgba(255,255,255,0.05) 0%,
+            rgba(255,255,255,0.15) 50%,
+            rgba(255,255,255,0.05) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
 .animate-blink {
     animation: blink 0.8s step-start infinite;
+}
+
+/* Make the entire toolbar stack and center its content */
+.fc-header-toolbar {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center !important; /* center everything horizontally */
+    gap: 0.5rem; /* spacing between rows */
+}
+
+/* Make each chunk centered too */
+.fc-header-toolbar .fc-toolbar-chunk {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Optional: give some spacing between the toolbar and calendar */
+.fc {
+    margin-top: 0rem;
 }
 
 .fc .fc-toolbar .fc-button {
@@ -115,11 +152,11 @@ html, body {
 }
 
 .fc .fc-toolbar .fc-button:hover {
-    @apply bg-boilerbeige/20 text-boilerbeige;
+    @apply bg-boilerbeige/20 text-boilergold;
 }
 
 .fc .fc-toolbar .fc-button.fc-button-active {
-    @apply bg-boilerbeige text-boilerdark;
+    @apply bg-boilergold text-boilerdark;
 }
 .fc .fc-toolbar-title {
     @apply lowercase text-2xl sm:text-3xl;

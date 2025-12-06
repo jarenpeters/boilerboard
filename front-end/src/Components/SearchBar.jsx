@@ -28,14 +28,14 @@ function SearchBar({ placeholder = "search...", className = "" }) {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={placeholder}
-                className="flex-1 px-4 py-3 text-boilerbeige placeholder-boilerbeige/50 font-dmsans font-black focus:outline-none"
+                className="flex-grow min-w-0 px-4 py-3 text-boilerbeige placeholder-boilerbeige/50 font-dmsans font-black focus:outline-none"
                 onKeyDown={(e) => e.key === "Enter" && handleSearch()}
             />
             <button
                 onClick={handleSearch}
-                className="flex items-center justify-center w-16 h-12 border border-boilerbeige/20 backdrop-blur-md bg-boilergold/80 text-boilerdark rounded-full hover:bg-boilergold/60"
+                className="flex-shrink-0 items-center justify-center w-16 h-12 border border-boilerbeige/20 backdrop-blur-md bg-boilergold/80 text-boilerdark rounded-full hover:bg-boilergold/60"
             >
-                <img alt="search" src="/searchicon.png" className="w-5 h-5" />
+                <img alt="search" src="/searchicon.png" className="w-6 h-6 m-auto" />
             </button>
         </div>
     );
