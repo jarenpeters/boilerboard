@@ -5,6 +5,9 @@ import re
 import os
 from dotenv import load_dotenv
 
+# Import your main.py functions
+import main   # <-- make sure main.py is in the same directory
+
 load_dotenv()
 
 MONGO_URI = os.getenv("MONGO_URI")
@@ -19,10 +22,12 @@ client = MongoClient(MONGO_URI)
 db = client["launchpad"]
 collection = db["events"]
 
+
 @app.route("/events", methods=["GET"])
 def get_events():
     events = list(collection.find({}, {"_id": 0}))
     return jsonify(events)
+
 
 @app.route("/search", methods=["GET"])
 def search_events():
@@ -52,7 +57,20 @@ def search_events():
 
     return jsonify(events)
 
-# Only run the web server if this script is executed directly
+
+# -----------------------------
+# 🚀 CRON ROUTE HERE
+# -----------------------------
+@app.route("/cron", methods=["GET"])
+def run_daily():
+    try:
+        result = main.run()      # <-- call a function inside main.py
+        return jsonify({"status": "success", "details": result}), 200
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
+
+
+# Startup
 if __name__ == "__main__":
     from waitress import serve
     port = int(os.environ.get("PORT", 5000))

@@ -149,8 +149,8 @@ export default function EventsList() {
                                 }
                                 className="w-28 h-140 rounded-3xl flex items-center justify-center
                                            cursor-pointer shadow-lg border border-white/10
-                                           backdrop-blur-lg bg-boilergray/40 text-boilerbeige font-bold
-                                           hover:bg-white/20 text-center transition"
+                                           backdrop-blur-lg bg-boilergold/40 text-boilerbeige font-bold
+                                           hover:bg-boilergold/20 text-center transition"
                             >
                                 see all
                             </div>
