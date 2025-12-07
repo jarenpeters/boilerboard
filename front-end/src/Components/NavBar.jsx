@@ -68,7 +68,7 @@ function NavBar() {
                 >
                     {/* Hamburger Icon */}
                     <img
-                        src="/hamburger.png"
+                        src="/menuicon.png"
                         alt="menu"
                         className={`absolute w-7 h-7 transition-transform duration-300 ${
                             isOpen ? "rotate-45 opacity-0" : "rotate-0 opacity-100"
