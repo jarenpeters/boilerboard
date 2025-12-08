@@ -29,7 +29,7 @@ def createvalues(matrix, account_username, starting_tag):
     results = []
 
     system_prompt = """You will be provided with an Instagram username and a list of that account’s recent posts.
-Each post will include a caption, image text, and post date.
+Each post will include a caption, image text (may have spelling errors), and post date.
 For each event post, return the following fields:
 - Username
 - PostIndex

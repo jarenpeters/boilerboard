@@ -5,7 +5,6 @@ from imagereader import readimage
 from largelanguagemodel import createvalues
 from cleanposts import clean_posts
 from mongoupload import upload_csv_to_mongo
-from datetime import datetime
 def run():
     print("starting program")
 
