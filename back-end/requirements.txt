@@ -10,5 +10,5 @@ instaloader==4.15
 waitress==2.1.2
 gunicorn==21.2.0
 easyocr==1.7.1
-torch==2.5.0
+torch==2.6.0
 torchvision==0.21.0
