@@ -4,9 +4,10 @@ from pymongo import MongoClient
 import re
 import os
 from dotenv import load_dotenv
+import threading
 
 # Import your main.py functions
-import main   # <-- make sure main.py is in the same directory
+import main
 
 load_dotenv()
 
@@ -59,15 +60,21 @@ def search_events():
 
 
 # -----------------------------
-# 🚀 CRON ROUTE HERE
+# NON-BLOCKING CRON ROUTE
 # -----------------------------
 @app.route("/cron", methods=["GET"])
 def run_daily():
-    try:
-        result = main.run()      # <-- call a function inside main.py
-        return jsonify({"status": "success", "details": result}), 200
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
+    def background_job():
+        try:
+            print("Background job started")
+            result = main.run()
+            print("Background job finished:", result)
+        except Exception as e:
+            print("Background job error:", e)
+
+    threading.Thread(target=background_job, daemon=True).start()
+
+    return jsonify({"status": "started"}), 200
 
 
 # Startup
