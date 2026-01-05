@@ -9,7 +9,7 @@ def run():
     print("starting program")
 
     # ---------------- MAIN PROGRAM ----------------
-    with open("testaccounts.json", "r") as f:
+    with open("accounts.json", "r") as f:
         accounts = json.load(f)
 
     all_posts_df = pd.DataFrame()
