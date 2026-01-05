@@ -3,8 +3,8 @@ name: Daily Instagram Scrape
 
 on:
   schedule:
-    - cron: '0 12 * * *'  # Noon UTC = 7am EST
-  workflow_dispatch:  # Manual trigger button
+    - cron: '0 5 * * *'
+  workflow_dispatch:
 
 jobs:
   scrape:
