@@ -36,3 +36,6 @@ def run():
 
     return "Finished updating MongoDB with cleaned posts."
 # ---------------- END MAIN ----------------
+
+if __name__ == "__main__":
+    run()
