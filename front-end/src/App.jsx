@@ -31,7 +31,7 @@ function App() {
       </div>
         <footer className="p-8 text-center text-sm opacity-70 mt-auto text-white">
             <div>
-                designed by <u><a href={"https://jarenpeters.com/"} target="_blank" rel="noopener noreferrer" title="jarenpeters.com">jaren peters</a></u> © 2025 - all rights reserved.
+                designed by <u><a href={"https://jarenpeters.com/"} target="_blank" rel="noopener noreferrer" title="jarenpeters.com">jaren peters</a></u> © 2026 - all rights reserved.
             </div>
         </footer>
     </BrowserRouter>
