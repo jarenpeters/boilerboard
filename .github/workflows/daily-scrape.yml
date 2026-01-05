@@ -28,5 +28,8 @@ jobs:
         working-directory: ./back-end
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          INSTALOADER_USERNAME: ${{ secrets.INSTALOADER_USERNAME }}
+          INSTALOADER_PASSWORD: ${{ secrets.INSTALOADER_PASSWORD }}
         run: |
           python main.py
